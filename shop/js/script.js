@@ -1,18 +1,16 @@
 $(document).ready(()=> {
-  updateCounter();
-
-if(localStorage.getItem("products")){
+  if(localStorage.getItem("products")){
   renderCart();
   updateCounter();
-    document.getElementById("clearStorage").addEventListener("click", function(){
+
+ document.getElementById("clearStorage").addEventListener("click", function(){
     localStorage.clear();
     location.reload();
   }); 
-} 
-
-
-
-
+  document.getElementById("update").addEventListener("click", calculateSum);
+}else {
+  updateCounter();
+}
 
 
 function renderCart(){
@@ -32,9 +30,7 @@ let table=document.getElementById("cart");
 )
 }
 
-  
-  document.getElementById("update").addEventListener("click", calculateSum);
-  
+ 
   
   function calculateSum(){
     let table = document.getElementById("cart");

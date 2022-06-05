@@ -9,7 +9,7 @@
 
 $result = $database_con->query($select);
 
-echo '<div class="row">';
+echo '<div class="row gallery">';
 if($result->num_rows>0){
   while($row=$result->fetch_assoc()){
       echo '<div class="col-4">';
